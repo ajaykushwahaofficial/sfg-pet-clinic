@@ -41,8 +41,8 @@
 		</plugins>
 	</build>
 	<scm>
-		<url>scm:git:git@github.com:ajaykushwahaofficial/sfg-pet-clinic.git</url>
-		<connection>scm:git:git@github.com:ajaykushwahaofficial/sfg-pet-clinic.git</connection>
+		<url>https://github.com/ajaykushwahaofficial/sfg-pet-clinic.git</url>
+		<connection>scm:git:https://github.com/ajaykushwahaofficial/sfg-pet-clinic.git</connection>
 		<developerConnection>scm:git:git@github.com:ajaykushwahaofficial/sfg-pet-clinic.git</developerConnection>
 		<tag>sfg-pet-clinic-0.0.1</tag>
 	</scm>
