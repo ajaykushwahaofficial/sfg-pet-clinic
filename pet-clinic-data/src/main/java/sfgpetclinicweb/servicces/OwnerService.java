@@ -1,10 +1,7 @@
 package sfgpetclinicweb.servicces;
 
-import java.util.Set;
+import sfgpetclinicweb.model.Owner;
 
-public interface OwnerService {
-    OwnerService findById(Long id);
+public interface OwnerService extends CrudService<Owner,Long>{
     OwnerService findByLastName(String lastName);
-    OwnerService save(OwnerService ower);
-    Set<OwnerService> findAll();
 }
