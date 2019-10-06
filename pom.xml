@@ -15,7 +15,7 @@
 	</parent>
 	<groupId>guru.springframework</groupId>
 	<artifactId>sfg-pet-clinic</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<name>sfg-pet-clinic</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -45,6 +45,6 @@
 		<url>https://github.com/ajaykushwahaofficial/sfg-pet-clinic.git</url>
 		<connection>scm:git:https://github.com/ajaykushwahaofficial/sfg-pet-clinic.git</connection>
 		<developerConnection>scm:git:git@github.com:ajaykushwahaofficial/sfg-pet-clinic.git</developerConnection>
-	  <tag>sfg-pet-clinic-1.0.1</tag>
+	  <tag>HEAD</tag>
   </scm>
 </project>
