@@ -2,7 +2,7 @@ package sfgpetclinicweb.model;
 
 public class Person extends BaseEntity{
     private String firstName;
-    private String lastNeme;
+    private String lastName;
 
     public String getFirstName() {
         return firstName;
@@ -12,11 +12,11 @@ public class Person extends BaseEntity{
         this.firstName = firstName;
     }
 
-    public String getLastNeme() {
-        return lastNeme;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastNeme(String lastNeme) {
-        this.lastNeme = lastNeme;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
