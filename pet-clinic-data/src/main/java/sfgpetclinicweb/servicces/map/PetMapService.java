@@ -28,6 +28,6 @@ public class PetMapService extends AbstractMapService<Pet,Long> implements CrudS
 
     @Override
     public Pet save(Pet entity) {
-        return super.save(entity.getId(),entity);
+        return super.save(entity);
     }
 }

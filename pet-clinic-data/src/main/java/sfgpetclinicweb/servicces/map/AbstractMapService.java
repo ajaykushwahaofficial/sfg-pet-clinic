@@ -1,12 +1,11 @@
 package sfgpetclinicweb.servicces.map;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import sfgpetclinicweb.model.BaseEntity;
 
-public abstract class AbstractMapService<T,ID> {
-    protected Map<ID,T> map=new HashMap<>();
+import java.util.*;
+
+public abstract class AbstractMapService<T extends BaseEntity,ID extends Long> {
+    protected Map<Long,T> map=new HashMap<>();
     Set<T> finadAll(){
         return new HashSet<>(map.values());
     }
@@ -15,8 +14,13 @@ public abstract class AbstractMapService<T,ID> {
         return map.get(id);
     }
 
-    T save(ID id,T entity){
-        map.put(id,entity);
+    T save(T entity){
+        if(null != entity && null == entity.getId())
+            entity.setId(getNextId());
+        else if(null == entity){
+            throw new RuntimeException("Entity can not be null");
+        }
+        map.put(entity.getId(),entity);
         return entity;
     }
 
@@ -26,6 +30,13 @@ public abstract class AbstractMapService<T,ID> {
 
     void deleteById(ID id){
         map.remove(id);
+    }
+
+    public Long getNextId(){
+        if(map.isEmpty())
+            return 1L;
+        else
+            return Collections.max(map.keySet())+1;
     }
 
 
