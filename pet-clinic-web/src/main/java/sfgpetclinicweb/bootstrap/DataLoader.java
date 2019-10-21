@@ -3,8 +3,10 @@ package sfgpetclinicweb.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import sfgpetclinicweb.model.Owner;
+import sfgpetclinicweb.model.PetType;
 import sfgpetclinicweb.model.Vet;
 import sfgpetclinicweb.servicces.OwnerService;
+import sfgpetclinicweb.servicces.PetTypeService;
 import sfgpetclinicweb.servicces.VetService;
 import sfgpetclinicweb.servicces.map.OwnerMapService;
 import sfgpetclinicweb.servicces.map.VetMapService;
@@ -14,11 +16,12 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
 
-    public DataLoader(OwnerMapService ownerMapService,VetMapService vetMapService){
-            this.ownerService = ownerMapService;
-            this.vetService = vetMapService;
-
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
@@ -44,6 +47,16 @@ public class DataLoader implements CommandLineRunner {
 
         vetService.save(vet1);
         vetService.save(vet2);
+
+
+        PetType petType=new PetType();
+        petType.setName("Dog");
+
+        PetType petType1=new PetType();
+        petType.setName("Cat");
+
+        petTypeService.save(petType);
+        petTypeService.save(petType1);
 
         System.out.print("Data Loads");
     }
