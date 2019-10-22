@@ -1,5 +1,6 @@
 package sfgpetclinicweb.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Owner extends Person{
@@ -8,6 +9,8 @@ public class Owner extends Person{
     private String telephone;
     private Set<Pet> pets;
     public Set<Pet> getPets() {
+        if(null == pets || pets.isEmpty())
+            return new HashSet<>();
         return pets;
     }
 
