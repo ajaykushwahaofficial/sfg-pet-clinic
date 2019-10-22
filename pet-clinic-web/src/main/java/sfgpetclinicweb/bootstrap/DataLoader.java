@@ -2,15 +2,11 @@ package sfgpetclinicweb.bootstrap;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import sfgpetclinicweb.model.Owner;
-import sfgpetclinicweb.model.Pet;
-import sfgpetclinicweb.model.PetType;
-import sfgpetclinicweb.model.Vet;
+import sfgpetclinicweb.model.*;
 import sfgpetclinicweb.servicces.OwnerService;
 import sfgpetclinicweb.servicces.PetTypeService;
 import sfgpetclinicweb.servicces.VetService;
-import sfgpetclinicweb.servicces.map.OwnerMapService;
-import sfgpetclinicweb.servicces.map.VetMapService;
+import sfgpetclinicweb.servicces.map.SpecialitiesMapService;
 
 import java.time.LocalDate;
 
@@ -20,11 +16,13 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
+    private final SpecialitiesMapService specialitiesMapService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialitiesMapService specialitiesMapService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.specialitiesMapService = specialitiesMapService;
     }
 
     @Override
@@ -73,9 +71,21 @@ public class DataLoader implements CommandLineRunner {
         vet1.setFirstName("Rinki");
         vet1.setLastName("Sharma");
 
+        Speciality speciality1=new Speciality();
+        speciality1.setDescription("Heart");
+        Speciality spec1=specialitiesMapService.save(speciality1);
+        vet1.getSpecialities().add(spec1);
+
+
         Vet vet2=new Vet();
         vet2.setFirstName("Kishan");
         vet2.setLastName("Sharma");
+
+
+        Speciality speciality2=new Speciality();
+        speciality2.setDescription("Bone");
+        Speciality spec2=specialitiesMapService.save(speciality2);
+        vet2.getSpecialities().add(spec2);
 
         vetService.save(vet1);
         vetService.save(vet2);

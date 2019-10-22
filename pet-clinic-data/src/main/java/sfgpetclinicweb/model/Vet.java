@@ -1,13 +1,18 @@
 package sfgpetclinicweb.model;
 
-public class Vet extends Person{
-    private Speciality speciality;
+import java.util.HashSet;
+import java.util.Set;
 
-    public Speciality getSpeciality() {
-        return speciality;
+public class Vet extends Person{
+    private Set<Speciality> specialities;
+
+    public Set<Speciality> getSpecialities() {
+        if(null == specialities || specialities.isEmpty())
+            return new HashSet<>();
+        return specialities;
     }
 
-    public void setSpeciality(Speciality speciality) {
-        this.speciality = speciality;
+    public void setSpecialities(Set<Speciality> specialities) {
+        this.specialities = specialities;
     }
 }
