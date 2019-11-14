@@ -1,5 +1,6 @@
 package sfgpetclinicweb.bootstrap;
 
+import org.apache.tomcat.jni.Local;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import sfgpetclinicweb.model.*;
@@ -7,6 +8,7 @@ import sfgpetclinicweb.servicces.OwnerService;
 import sfgpetclinicweb.servicces.PetTypeService;
 import sfgpetclinicweb.servicces.VetService;
 import sfgpetclinicweb.servicces.map.SpecialitiesMapService;
+import sfgpetclinicweb.servicces.map.VisitMapService;
 
 import java.time.LocalDate;
 
@@ -17,12 +19,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialitiesMapService specialitiesMapService;
+    private final VisitMapService visitMapService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialitiesMapService specialitiesMapService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialitiesMapService specialitiesMapService, VisitMapService visitMapService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialitiesMapService = specialitiesMapService;
+        this.visitMapService = visitMapService;
     }
 
     @Override
@@ -99,6 +103,13 @@ public class DataLoader implements CommandLineRunner {
 
         petTypeService.save(petType);
         petTypeService.save(petType1);
+
+
+        Visit visit1=new Visit();
+        visit1.setDate(LocalDate.now());
+        visit1.setDescription("Dog Bimar h");
+        visit1.setPet(mikePet);
+
 
         System.out.print("Data Loads");
     }
