@@ -1,12 +1,9 @@
 package sfgpetclinicweb.bootstrap;
 
-import org.apache.tomcat.jni.Local;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import sfgpetclinicweb.model.*;
-import sfgpetclinicweb.servicces.OwnerService;
-import sfgpetclinicweb.servicces.PetTypeService;
-import sfgpetclinicweb.servicces.VetService;
+import sfgpetclinicweb.servicces.*;
 import sfgpetclinicweb.servicces.map.SpecialitiesMapService;
 import sfgpetclinicweb.servicces.map.VisitMapService;
 
@@ -18,10 +15,10 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
-    private final SpecialitiesMapService specialitiesMapService;
-    private final VisitMapService visitMapService;
+    private final SpecialitiesService specialitiesMapService;
+    private final VisitService visitMapService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialitiesMapService specialitiesMapService, VisitMapService visitMapService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialitiesService specialitiesMapService, VisitService visitMapService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;

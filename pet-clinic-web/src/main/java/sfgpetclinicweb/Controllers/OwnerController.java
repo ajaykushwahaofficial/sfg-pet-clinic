@@ -3,15 +3,16 @@ package sfgpetclinicweb.Controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import sfgpetclinicweb.servicces.OwnerService;
 import sfgpetclinicweb.servicces.map.OwnerMapService;
 
 @Controller
 @RequestMapping("/owners")
 public class OwnerController {
 
-    private final OwnerMapService ownerMapService;
+    private final OwnerService ownerMapService;
 
-    public OwnerController(OwnerMapService ownerMapService){
+    public OwnerController(OwnerService ownerMapService){
         this.ownerMapService=ownerMapService;
     }
 

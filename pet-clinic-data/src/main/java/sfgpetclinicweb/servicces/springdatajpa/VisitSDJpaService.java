@@ -9,7 +9,7 @@ import sfgpetclinicweb.servicces.VisitService;
 import java.util.HashSet;
 import java.util.Set;
 @Service
-@Profile("visitSpringJpaData")
+@Profile("springjpadata")
 public class VisitSDJpaService implements VisitService {
     private final VisitRepository visitRepository;
 
