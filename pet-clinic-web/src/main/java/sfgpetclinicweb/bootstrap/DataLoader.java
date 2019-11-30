@@ -4,8 +4,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import sfgpetclinicweb.model.*;
 import sfgpetclinicweb.servicces.*;
-import sfgpetclinicweb.servicces.map.SpecialitiesMapService;
-import sfgpetclinicweb.servicces.map.VisitMapService;
 
 import java.time.LocalDate;
 
