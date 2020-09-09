@@ -1,22 +1,22 @@
-package sfgpetclinicweb.servicces.map;
+package sfgpetclinicweb.services.map;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import sfgpetclinicweb.model.Owner;
-import sfgpetclinicweb.servicces.OwnerService;
+import sfgpetclinicweb.model.Speciality;
+import sfgpetclinicweb.services.SpecialitiesService;
 
 import java.util.Set;
+
 @Service
 @Profile({"default","map"})
-public class OwnerMapService extends AbstractMapService<Owner,Long> implements OwnerService {
-
+public class SpecialitiesMapService extends AbstractMapService<Speciality,Long> implements SpecialitiesService{
     @Override
-    public Set<Owner> findAll() {
+    public Set<Speciality> findAll() {
         return super.finadAll();
     }
 
     @Override
-    public void delete(Owner entity) {
+    public void delete(Speciality entity) {
         super.delete(entity);
     }
 
@@ -26,17 +26,12 @@ public class OwnerMapService extends AbstractMapService<Owner,Long> implements O
     }
 
     @Override
-    public Owner findById(Long id) {
+    public Speciality findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Owner save(Owner entity) {
+    public Speciality save(Speciality entity) {
         return super.save(entity);
-    }
-
-    @Override
-    public Owner findByLastName(String lastName) {
-        return null;
     }
 }

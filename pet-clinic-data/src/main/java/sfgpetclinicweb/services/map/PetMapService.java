@@ -1,22 +1,21 @@
-package sfgpetclinicweb.servicces.map;
+package sfgpetclinicweb.services.map;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import sfgpetclinicweb.model.Visit;
-import sfgpetclinicweb.servicces.VisitService;
+import sfgpetclinicweb.model.Pet;
+import sfgpetclinicweb.services.CrudService;
 
 import java.util.Set;
-
 @Service
 @Profile({"default","map"})
-public class VisitMapService extends AbstractMapService<Visit,Long> implements VisitService {
+public class PetMapService extends AbstractMapService<Pet,Long> implements CrudService<Pet,Long> {
     @Override
-    public Set<Visit> findAll() {
+    public Set<Pet> findAll() {
         return super.finadAll();
     }
 
     @Override
-    public void delete(Visit entity) {
+    public void delete(Pet entity) {
         super.delete(entity);
     }
 
@@ -26,12 +25,12 @@ public class VisitMapService extends AbstractMapService<Visit,Long> implements V
     }
 
     @Override
-    public Visit findById(Long id) {
+    public Pet findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Visit save(Visit entity) {
+    public Pet save(Pet entity) {
         return super.save(entity);
     }
 }

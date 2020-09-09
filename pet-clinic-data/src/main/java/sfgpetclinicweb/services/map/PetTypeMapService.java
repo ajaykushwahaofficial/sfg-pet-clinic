@@ -1,22 +1,23 @@
-package sfgpetclinicweb.servicces.map;
+package sfgpetclinicweb.services.map;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import sfgpetclinicweb.model.Speciality;
-import sfgpetclinicweb.servicces.SpecialitiesService;
+import sfgpetclinicweb.model.PetType;
+import sfgpetclinicweb.services.PetTypeService;
 
 import java.util.Set;
 
 @Service
 @Profile({"default","map"})
-public class SpecialitiesMapService extends AbstractMapService<Speciality,Long> implements SpecialitiesService{
+public class PetTypeMapService extends AbstractMapService<PetType,Long> implements PetTypeService {
+
     @Override
-    public Set<Speciality> findAll() {
+    public Set<PetType> findAll() {
         return super.finadAll();
     }
 
     @Override
-    public void delete(Speciality entity) {
+    public void delete(PetType entity) {
         super.delete(entity);
     }
 
@@ -26,12 +27,12 @@ public class SpecialitiesMapService extends AbstractMapService<Speciality,Long> 
     }
 
     @Override
-    public Speciality findById(Long id) {
+    public PetType findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Speciality save(Speciality entity) {
+    public PetType save(PetType entity) {
         return super.save(entity);
     }
 }

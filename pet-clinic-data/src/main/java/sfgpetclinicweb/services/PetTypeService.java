@@ -1,4 +1,4 @@
-package sfgpetclinicweb.servicces;
+package sfgpetclinicweb.services;
 
 import sfgpetclinicweb.model.PetType;
 

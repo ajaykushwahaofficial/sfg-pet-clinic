@@ -3,7 +3,7 @@ package sfgpetclinicweb.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import sfgpetclinicweb.model.*;
-import sfgpetclinicweb.servicces.*;
+import sfgpetclinicweb.services.*;
 
 import java.time.LocalDate;
 

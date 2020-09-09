@@ -1,10 +1,10 @@
-package sfgpetclinicweb.servicces.springdatajpa;
+package sfgpetclinicweb.services.springdatajpa;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import sfgpetclinicweb.model.Speciality;
 import sfgpetclinicweb.repositories.SpecialityRepository;
-import sfgpetclinicweb.servicces.SpecialitiesService;
+import sfgpetclinicweb.services.SpecialitiesService;
 
 import java.util.HashSet;
 import java.util.Set;

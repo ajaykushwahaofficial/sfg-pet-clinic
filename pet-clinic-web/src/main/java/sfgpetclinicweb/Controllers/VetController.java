@@ -3,8 +3,7 @@ package sfgpetclinicweb.Controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import sfgpetclinicweb.servicces.VetService;
-import sfgpetclinicweb.servicces.map.VetMapService;
+import sfgpetclinicweb.services.VetService;
 
 @Controller
 @RequestMapping("/vets")
