@@ -15,16 +15,14 @@ public class OwnerController {
         this.ownerMapService=ownerMapService;
     }
 
-   /* @RequestMapping({"","/","index","index.html"})
-    public String getListOfOwner(Model model) {
+    @RequestMapping({"","/","index","index.html"})
+    public String listOwners(Model model) {
         model.addAttribute("owners",ownerMapService.findAll());
         return "owner/index";
-    }*/
+    }
 
     @RequestMapping("/find")
-    public String getAllOwnersList(Model model){
-        System.out.println("Check :");
-        model.addAttribute("owners",ownerMapService.findAll());
-        return "owner/index";
+    public String findOwners(){
+        return "notImplementedYet";
     }
 }
