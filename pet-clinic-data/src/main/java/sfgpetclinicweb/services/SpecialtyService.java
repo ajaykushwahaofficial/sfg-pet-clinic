@@ -4,5 +4,5 @@ import org.springframework.stereotype.Service;
 import sfgpetclinicweb.model.Speciality;
 
 @Service
-public interface SpecialitiesService extends CrudService<Speciality,Long> {
+public interface SpecialtyService extends CrudService<Speciality,Long> {
 }

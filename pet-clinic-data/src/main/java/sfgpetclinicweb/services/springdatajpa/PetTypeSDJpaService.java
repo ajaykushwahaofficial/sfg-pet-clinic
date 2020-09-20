@@ -1,17 +1,19 @@
 package sfgpetclinicweb.services.springdatajpa;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
+
 import sfgpetclinicweb.model.PetType;
 import sfgpetclinicweb.repositories.PetTypeRepository;
 import sfgpetclinicweb.services.PetTypeService;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Service
-@Profile("springjpadata")
+@Profile("springdatajpa")
 public class PetTypeSDJpaService implements PetTypeService {
+
     private final PetTypeRepository petTypeRepository;
 
     public PetTypeSDJpaService(PetTypeRepository petTypeRepository) {
@@ -20,14 +22,9 @@ public class PetTypeSDJpaService implements PetTypeService {
 
     @Override
     public Set<PetType> findAll() {
-        Set<PetType> petTypeList=new HashSet<>();
-        petTypeRepository.findAll().forEach(petTypeList::add);
-        return petTypeList;
-    }
-
-    @Override
-    public PetType save(PetType entity) {
-        return petTypeRepository.save(entity);
+        Set<PetType> petTypes = new HashSet<>();
+        petTypeRepository.findAll().forEach(petTypes::add);
+        return petTypes;
     }
 
     @Override
@@ -36,12 +33,17 @@ public class PetTypeSDJpaService implements PetTypeService {
     }
 
     @Override
-    public void deleteById(Long aLong) {
-        petTypeRepository.deleteById(aLong);
+    public PetType save(PetType object) {
+        return petTypeRepository.save(object);
     }
 
     @Override
-    public void delete(PetType entity) {
-        petTypeRepository.delete(entity);
+    public void delete(PetType object) {
+        petTypeRepository.delete(object);
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+        petTypeRepository.deleteById(aLong);
     }
 }
