@@ -14,7 +14,6 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Entity
 @Table(name = "types")
 public class PetType extends BaseEntity {
@@ -22,13 +21,21 @@ public class PetType extends BaseEntity {
     /**
 	 * 
 	 */
-	private static final long serialVersionUID = 602220093594486176L;
-	@Column(name = "name")
-    private String name;
+	private static final long serialVersionUID = 5598818714350370010L;
+
 
 	@Builder
     public PetType(Long id, String name) {
         super(id);
         this.name = name;
+    }
+
+    @Column(name = "name")
+    private String name;
+
+
+    @Override
+    public String toString() {
+        return name;
     }
 }
